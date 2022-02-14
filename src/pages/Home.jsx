@@ -56,7 +56,11 @@ export default function Home() {
     <PageContainer>
       <Header />
       <ContentContainer>
-        <InputContainer isSearching={productList.length > 0} warnNotFound={warnNotFound}>
+        <InputContainer
+          isSearching={productList.length > 0}
+          warnNotFound={warnNotFound}
+          className="input-container"
+        >
           <Input
             type="search"
             placeholder="Pesquise produtos"
@@ -126,8 +130,7 @@ const InputContainer = styled.div`
   transition: all 300ms ease-in-out;
 
   :after{
-    content: 'Ops, não encontramos nada.
-            Tente outro produto (ex: camisa, garrafa)';
+    content: 'Ops, não encontramos nada. Tente pesquisar outro produto (ex: camisa, garrafa)';
     opacity: ${({ warnNotFound }) => (warnNotFound ? '1' : '0')};
     position: absolute;
     bottom: -40px;
