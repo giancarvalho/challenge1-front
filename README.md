@@ -17,6 +17,7 @@
 ### Steps
 
 1) Run ```git clone https://github.com/giancarvalho/challenge1-front.git ```
-2) Run ```npm install```
+2) Go to the root folder of the repository
+3) Run ```npm install```
 4) Run ```npm start```
-5) Optionally, run ``` npm cypress run ``` to run end-to-end tests
+5) Optionally, while the app is running (step 4), run ``` npx cypress run ``` to run end-to-end tests. 
