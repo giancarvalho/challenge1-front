@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DebounceInput } from 'react-debounce-input';
 import styled from 'styled-components';
 import { Oval } from 'react-loader-spinner';
+import { AiOutlineSearch } from 'react-icons/ai';
 import Header from '../components/Header';
 import { getProducts } from '../services/service';
 import ProductGrid from '../components/ProductList';
@@ -69,7 +70,7 @@ export default function Home() {
             value={searchValue}
             onChange={(e) => handleChange(e)}
           />
-          {isSearching && <Oval height={30} width={30} color="#000" />}
+          <button type="submit" onClick={() => searchProducts(searchValue)}>{isSearching ? <Oval height={30} width={30} color="#000" /> : <AiOutlineSearch />}</button>
         </InputContainer>
         <ProductGrid productList={productList} />
       </ContentContainer>
@@ -128,6 +129,17 @@ const InputContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 300ms ease-in-out;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    color: #414040;
+    cursor: pointer;
+  }
 
   :after{
     content: 'Ops, não encontramos nada. Tente pesquisar outro produto (ex: camisa, garrafa)';
