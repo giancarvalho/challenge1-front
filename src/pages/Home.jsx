@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useState } from 'react';
 import { DebounceInput } from 'react-debounce-input';
 import styled from 'styled-components';
@@ -33,6 +34,7 @@ export default function Home() {
       })
       .catch((error) => {
         if (error.response.status === 503) flashMessage();
+        else alert('API fora do ar. Tente novamente mais tarde.');
         cleanSearch();
       });
   }
