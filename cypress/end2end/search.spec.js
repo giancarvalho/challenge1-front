@@ -16,7 +16,7 @@ describe("Product search", () => {
     cy.get("input")
       .type("xxx")
       .then(() => {
-        cy.wait(1500)
+        cy.wait(2000)
       
         cy.window().then((win) => {
           cy.get(".input-container").then(($el) => {
