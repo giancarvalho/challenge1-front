@@ -33,7 +33,7 @@ export default function Home() {
         setIsSearching(false);
       })
       .catch((error) => {
-        if (error.response.status === 503) flashMessage();
+        if (error.response.status === 500) flashMessage();
         else alert('API fora do ar. Tente novamente mais tarde.');
         cleanSearch();
       });
